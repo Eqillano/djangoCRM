@@ -22,7 +22,7 @@ class Product(models.Model):
 	CATEGORY = (
 			('Indoor', 'Indoor'),
 			('Out Door', 'Out Door'),
-			) 
+			)
 
 	name = models.CharField(max_length=200, null=True)
 	price = models.FloatField(null=True)
@@ -47,7 +47,5 @@ class Order(models.Model):
 	status = models.CharField(max_length=200, null=True, choices=STATUS)
 
 
-
-
-
-	
+	def __str__(self):
+		return self.product.name
